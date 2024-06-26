@@ -52,11 +52,8 @@ body {
 :root {
     --color1: black;
     --color2: white;
-    --color3: #172133;
-    --color4: #243851;
-    --color-a: #ccc;
-    --color-b: #afaf;
-    --color-c: #33aa;
+    --color3: #6d6d6d;
+    
 }
 
 h1 {
@@ -75,13 +72,13 @@ h3 {
 h4 {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--color1);
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 4px;
 }
 h5 {
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--color1);
-    font-size: 18px;
+    color: var(--color3);
+    font-size: 20px;
     margin: 0px 0 18px;
     font-weight: normal;
 }
@@ -455,10 +452,12 @@ position: absolute;
         margin-block: 10%;
     } */
    }
-
-   #homelink, #homelinktwo {
-   font-size: 26px;
-   }
+   .homelinks {
+    display: none !important;
+    }
+    .landing-logo {
+        height: 80%;
+       } 
    #heading {
     grid-column: unset;
     grid-row: unset;
@@ -677,7 +676,10 @@ display: block;
 header {
     padding: 0 16px;
 }
-
+.hamburger {
+    transform: scale(.8);
+   }
+ 
 
 .navbar {
     padding: 84px 0 0 16px;
@@ -804,7 +806,7 @@ header {
 /* ----------------------Tablet Design Page---------------------- */
 @media screen and (max-width:1024px) {
     h1 {
-        font-size: 4.5vw;
+        font-size: 36px;
     }
 
     .work-grid {
@@ -827,7 +829,7 @@ header {
 /* ----------------------Mobile Design Page---------------------- */
 @media screen and (max-width:600px) {
     h1 {
-        font-size: 5vw;
+        font-size: 30px;
     }
 
    
@@ -847,12 +849,7 @@ header {
 
 
 /* ----------------------About Page---------------------- */
-.portraitshot {
-    width: 300px;
-    height: 400px;
-    display: flex;
 
-} 
  p {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
@@ -862,13 +859,21 @@ header {
     width: 100%;
     margin: auto;
     display: grid;
-   grid-template-columns: 60% 40%;
-  grid-template-rows: 100px 1fr;
+grid-template-columns: 50% 40%;
+column-gap: 10%;
+  grid-template-rows: auto 1fr;
+  
+  grid-template-areas: 
+  "title portrait"
+  "bio portrait";
     
     
 }
 .bio-text {
     margin-bottom: 30px;
+}
+.bio {
+    grid-area: bio;
 }
 .about-inner h1 {
     text-align: left;
@@ -880,7 +885,7 @@ header {
    }
 .portrait {
     width: 100%;
-    grid-area: span 2/span 1/span 2/span 1;
+    grid-area: portrait;
   height: calc(100dvh - 150px);
    
 }
@@ -961,7 +966,8 @@ margin-bottom: 18px;
   
 }
 .about-title {
-    align-self: flex-end;
+    grid-area: title;
+    height: min-content;
 
 }
 
@@ -969,11 +975,13 @@ margin-bottom: 18px;
 @media screen and (max-width:1024px){
     .about-inner {
        
-       grid-template-columns: 1fr;
-    }
-    .about-title {
-        order: -99;
-    }
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "title"
+        "portrait"
+        "bio";
+     }
+  
     .bio {
        
         margin-bottom: 60px;
@@ -981,7 +989,7 @@ margin-bottom: 18px;
     }
     .portrait {
         width: 100%;
-        order: -1;
+       
         
     }
     .portrait img{
@@ -1006,7 +1014,7 @@ margin-bottom: 18px;
 }
 .portrait {
     width: 100%;
-    order: -1;
+ 
     
     
 }
@@ -1238,7 +1246,7 @@ margin-bottom: 18px;
     margin: auto;
     display: flex;
     width: 100%;
-    padding: 20px 0 40px;
+    padding: 40px 0 40px;
     align-items: center;
     justify-content: center;
     
@@ -1376,7 +1384,7 @@ margin-bottom: 18px;
     line-height: 24px;
 }
 .contact-inner>div:nth-child(2){
-    padding-left: 100px;
+    padding-left: 150px;
     
 }
 .contactform {
@@ -1473,18 +1481,23 @@ label {
 /* ---------------------- Tablet Contact Page ---------------------- */
 
 @media screen and (max-width:1024px) {
-
-    .contact-inner>div:nth-child(1){
-        
-            width: 60%;
+    .contact-inner {
+        flex-direction: column;
     }
-
-
-        .contact-inner>div:nth-child(2){
-            width: 40%;
-          padding-left: 50px;
+        .contact-inner>div:nth-child(1){
+            
+                width: 100%;
         }
     
+    
+            .contact-inner>div:nth-child(2){
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding-left: 0;
+              padding-left: 0px;
+            }
+        
 }
 
 
@@ -1492,21 +1505,10 @@ label {
 
 @media screen and (max-width:600px) {
 
-    .contact-inner {
-        flex-direction: column;
-        
-    }
 .contact-inner li {
     line-height: 28px;
 }
-.contact-inner>div {
-    width: 100% !important;
-}
-.contact-inner>div:nth-child(2) {
-   display: flex;
-   justify-content: space-between;
-   padding-left: 0;
-}
+
 }
 
 
@@ -1572,21 +1574,107 @@ label {
 
 
 /* ----------------------Testimonials---------------------- */
+.testimonials-mobile {
+    display: none;
+}
+
 .testimonials {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "testimonial-trigger testimonial"
+    "testimonial-trigger testimonial"
+    "testimonial-trigger testimonial"
+    "testimonial-trigger testimonial"
+    "testimonial-trigger testimonial";
+    column-gap: 80px;
+    row-gap: 20px;
     padding: 0px 0 80px;
 }
+.testimonial-trigger {
+    border-bottom: 2px solid var(--color3);
+    width: 100%;
+    height: min-content;
+    grid-column: 1/2;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 76px;
+}
+.testimonial-trigger::after {
+    font-family: FontAwesome;
+    content: "\f0da";
+    font-size: 30px;
+align-self: center;
+color: var(--color3);
+transition: .3s ease;
+}
+.testimonial-trigger:hover::after {
+    
+color: var(--color1);
+}
+.testimonial-trigger:focus::after {
+    
+    color: var(--color1);
+    }
+.testimonial-text {
+    display: none;
+    padding: 20px 0;
+    grid-area: testimonial;
+    
+    overflow: hidden;
+    transition: 0.3s ease-in;
+}
+.testimonial-text:nth-of-type(4) {
+    padding-top: 96px;
+}
+.testimonial-text:nth-of-type(6) {
+    padding-top: 192px;
+}
+.testimonial-text:nth-of-type(8) {
+    align-self: flex-end;
+    padding-bottom: 96px;
+}
+.testimonial-text:nth-of-type(10) {
+    align-self: flex-end;
+}
+.testimonials .expand-trigger {
+    margin-bottom: 10px;
+}
+
+  
+
+    .testimonial-trigger:focus+.testimonial-text {
+        display: block;
+        transition: .5s ease-in;
+        transition-delay: .3s;
+    }
+
 /* ---------------------- Tablet Testimonials---------------------- */
 
 @media screen and (max-width:1024px) {
-  .testimonials {
-    grid-template-columns: minmax(0, 1fr);
-  }
-    
+    .testimonials-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 0px 0 80px;
+    }
+    .testimonials-mobile>div {
+        border-bottom: 2px solid var(--color3);
+        width: 100%;
+        height: min-content;
+    }
+    .testimonials-mobile .expand-content {
+        padding: 20px 0;
+    }
+    .testimonials-mobile .expand-trigger {
+        margin-bottom: 10px;
+    }
+    .testimonials {
+        display: none;
+    }
 }
-
+  
 /* ---------------------- Mobile Testimonials---------------------- */
 
 @media screen and (max-width:600px) {}
