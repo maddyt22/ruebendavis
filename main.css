@@ -804,7 +804,7 @@ header {
 /* ----------------------Tablet Design Page---------------------- */
 @media screen and (max-width:1024px) {
     h1 {
-        font-size: 36px;
+        font-size: 4.5vw;
     }
 
     .work-grid {
@@ -827,7 +827,7 @@ header {
 /* ----------------------Mobile Design Page---------------------- */
 @media screen and (max-width:600px) {
     h1 {
-        font-size: 30px;
+        font-size: 5vw;
     }
 
    
