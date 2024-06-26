@@ -291,7 +291,7 @@ function expand(i) {
 
       $content.slideToggle(300, function () {
           header.text(function () {
-              return $content.is(":visible") ? "Read Less" : "Read More";
+              return $content.is(":visible") ? "See Less" : "See More";
           });
       });
 $(this).find("span").toggleClass('expanded');
