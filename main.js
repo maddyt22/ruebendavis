@@ -270,6 +270,21 @@ let master = gsap.timeline()
 
 });
 
+const parent = document.querySelectorAll('.fade img, .fade video')
+
+const fadeups = gsap.utils.toArray(parent);
+
+fadeups.forEach((fadeup, i) => {
+  const anim = gsap.fromTo(fadeup, {opacity: 0, y:150}, {duration: .5, opacity: 1, y: 0});
+  ScrollTrigger.create({
+    trigger: fadeup,
+    animation: anim,
+    toggleActions: 'play none none none',
+    once: true,
+  });
+});
+
+
 // E X P A N D panel ************************************************************************************************************************************************
 $(document).ready(function () {
   openExpand('.expand-open');
