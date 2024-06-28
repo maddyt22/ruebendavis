@@ -194,7 +194,7 @@ landingtl.to("#landinglogo", 2, {scale: 1})
   
   .to(".homelinks", 2, {
     opacity:1
-   })
+   }, "-=1.5")
    .to("#homemenu", 2, {opacity:1}, "<");
   return landingtl;
 }
