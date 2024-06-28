@@ -1541,9 +1541,10 @@ label {
   .description-inner {
     width: 100%;
   }
-  .testimonial {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+   .testimonial {
+    grid-template-columns: 100%;
+    grid-template-rows: max-content max-content;
+    gap: 20px;
   }
     
 }
