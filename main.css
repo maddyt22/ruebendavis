@@ -519,9 +519,8 @@ header {
   }
   .header-logo {
     display: flex;
-
-  float: right;
-  justify-self: right;
+width: 100%;
+ 
   justify-content: center;
   align-content: center;
   
@@ -529,9 +528,10 @@ header {
   .header-logo a {
     display: flex;
     align-items: center;
+      width: 28px;
   }
   .header-logo svg {
-    width: 24.5px;
+   height: 47px;
     fill: var(--color1);
   z-index: 996;
   }
@@ -676,13 +676,27 @@ display: block;
 header {
     padding: 0 16px;
 }
-.hamburger {
-    transform: scale(.8);
-   }
- .header-logo {
-    transform: scale(.8);
-   }
-
+.hamburger .line {
+    width: 40px;
+    height: 4px;
+    background-color: var(--color1);
+    display: block;
+    margin: 6.4px 0;
+    
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    width: 100%;
+    align-items: center;
+    height: 84px;
+  }
+  .header-logo svg {
+    height: 37.6px;
+  }
+  .header-logo a {
+    width: 22px;
+  }
 .navbar {
     padding: 84px 0 0 16px;
     background-color: rgb(255, 255, 255);
@@ -718,7 +732,7 @@ header {
 .work-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    width: 85%;
+    width: 100%;
     margin: auto;
     flex-wrap: wrap;
     justify-content: center;
@@ -1089,6 +1103,9 @@ margin-bottom: 18px;
 }
 .description-inner p {
     margin-bottom: 20px;
+}
+.description-inner h4 {
+    font-size: 22px !important;
 }
 .twocolumn {
     display: grid;
@@ -1519,7 +1536,7 @@ label {
 
 @media screen and (max-width:1024px) {
     .project-description {
-        grid-column: 1/3;
+        grid-column: 1/2;
     }
   .description-inner {
     width: 100%;
@@ -1566,10 +1583,10 @@ label {
     display: flex;
     flex-direction: column;
  }
- .project-footer-buttons {
-    a {
+ .project-footer-buttons a {
+    
         font-size: 16px;
-    }
+    
  }
 
 }
