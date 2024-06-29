@@ -82,6 +82,29 @@ h5 {
     margin: 0px 0 18px;
     font-weight: normal;
 }
+
+.design-page-content img {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: .5s ease;
+  }
+  .design-page-content img.visible {
+    opacity: 1;
+    transform: none;
+  
+  }
+  .design-page-content video {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: .5s ease;
+  }
+  .design-page-content video.visible {
+    opacity: 1;
+
+    transform: none;
+  
+  }
+
 /* -------------------------Animations------------------------- */
 @-webkit-keyframes logospin {
     0% {

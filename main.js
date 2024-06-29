@@ -270,20 +270,20 @@ let master = gsap.timeline()
 
 });
 
-const parent = document.querySelectorAll('.design-page-content img')
-
-const fadeups = gsap.utils.toArray(parent);
-
-fadeups.forEach((fadeup, i) => {
-  const anim = gsap.fromTo(fadeup, {opacity: 0, y:150}, {duration: .5, opacity: 1, y: 0});
-  ScrollTrigger.create({
-    trigger: fadeup,
-    animation: anim,
-    toggleActions: 'play none none none',
-    once: true,
-  });
-});
-
+var controller = new ScrollMagic.Controller
+var fadeup = document.querySelectorAll(".design-page-content img, .design-page-content video");
+for (var i = 0; i < fadeup.length; i++) { // create a scene for each element
+  new ScrollMagic.Scene({
+    triggerElement: fadeup[i], // y value not modified, so we can use element as trigger as well
+    // start a little later
+    triggerHook: 0.7,
+    // duration: "80%",
+    reverse: false,
+  })
+    .setClassToggle(fadeup[i], "visible") // add class toggle
+    // .addIndicators({name: "project" + (i+1) }) // add indicators (requires plugin)
+    .addTo(controller);
+};
 
 // E X P A N D panel ************************************************************************************************************************************************
 $(document).ready(function () {
