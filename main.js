@@ -270,7 +270,7 @@ let master = gsap.timeline()
 
 });
 
-const parent = document.querySelectorAll('.design-page-content img')
+const parent = document.querySelectorAll('.design-page-content img, .design-page-content video')
 
 const fadeups = gsap.utils.toArray(parent);
 
