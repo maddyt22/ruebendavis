@@ -1579,12 +1579,20 @@ label {
         grid-template-columns: 100%;
         align-items: center;
         justify-items: center;
-        gap: 20px;
+        row-gap: 20px;
+        column-gap: 0;
         width: 100%;
         
         
         
     }
+    .silva {
+        margin-bottom: 0;
+    
+     }
+     .silva img {
+        padding: 10vw 15vw;
+     }
  .twocolumn img, video {
     width: 100%;
     grid-column: 1/2;
