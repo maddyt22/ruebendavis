@@ -284,23 +284,7 @@ for (var i = 0; i < fadeup.length; i++) { // create a scene for each element
     // .addIndicators({name: "project" + (i+1) }) // add indicators (requires plugin)
     .addTo(controller);
 };
-if (window.innerWidth < 737) {
-  for (var i = 0; i < fadeup.length; i++) { // create a scene for each element
-    new ScrollMagic.Scene({
-      triggerElement: fadeup[i], // y value not modified, so we can use element as trigger as well
-      // start a little later
-      
-      triggerHook: 0.8,
-    
-      // duration: "80%",
-      reverse: false,
-    })
-      .setClassToggle(fadeup[i], "visible") // add class toggle
-      // .addIndicators({name: "project" + (i+1) }) // add indicators (requires plugin)
-      .addTo(controller);
-  };
 
-};
 // E X P A N D panel ************************************************************************************************************************************************
 $(document).ready(function () {
   openExpand('.expand-open');
@@ -322,7 +306,7 @@ function expand(i) {
 
       $content.slideToggle(300, function () {
           header.text(function () {
-              return $content.is(":visible") ? "See Less" : "See More";
+              return $content.is(":visible") ? "Read Less" : "Read More";
           });
       });
 $(this).find("span").toggleClass('expanded');
