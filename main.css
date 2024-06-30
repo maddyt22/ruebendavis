@@ -1588,11 +1588,10 @@ label {
     }
     .silva {
         margin-bottom: 0;
+        padding: 0 10vw;
+        gap: 10vw;
+     }
     
-     }
-     .silva img {
-        padding: 10% 15%;
-     }
  .twocolumn img, video {
     width: 100%;
     grid-column: 1/2;
