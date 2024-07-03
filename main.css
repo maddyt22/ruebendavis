@@ -1616,10 +1616,12 @@ label {
  }
  .project-footer-buttons a {
     
-        font-size: 16px;
+        font-size: 3.5vw;
     
  }
-
+ .designhomebtn {
+    font-size: 3.5vw !important;
+}
 }
 
 
