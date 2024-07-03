@@ -66,15 +66,18 @@
                     Let's go for a coffee or a beer and discuss how we can achieve your business goals. Reach out, and
                     let's make something great happen!
                 </p>
-                <form action="" class="contactform">
-                    <label for="name">Full name</label>
-                    <input type="text" name="name" id="name">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="5"></textarea>
-                    <input type="submit" value="Submit" id="submit">
-                </form>
+                <form action="send_email.php" method="POST" class="contactform">
+    <label for="name">Full name</label>
+    <input type="text" name="name" id="name" required>
+    
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+    
+    <label for="message">Message</label>
+    <textarea name="message" id="message" cols="30" rows="5" required></textarea>
+    
+    <input type="submit" value="Submit" id="submit">
+</form>
             </div>
 
             <div>
